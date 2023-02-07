@@ -1,0 +1,216 @@
+<html>
+  <head>
+    <style>
+      :root {
+        --red: #ff6d69;
+        --orange: #ffaf2a;
+        --blue: #0eb8fb;
+        --green: #00ab2e;
+        --main: #8e4fff;
+        --gray: #c6c4c8;
+      }
+      body {
+        margin: 0;
+        padding-bottom: 3000px;
+        overflow-x: hidden;
+      }
+      #canvas {
+        perspective: 100px;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+      }
+      .bubble {
+        width: 20vw;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        position: absolute;
+        transition: 1s;
+        transition-timing-function: ease-out;
+      }
+      p {
+        font-size: 2em;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="canvas">
+      <div
+        class="bubble"
+        style="
+          background-color: var(--main);
+          left: -19vw;
+          top: -23vh;
+          transform: translateZ(-220px);
+        ">
+        <p>친구</p>
+      </div>
+      <div
+        class="bubble"
+        style="
+          background-color: var(--orange);
+          left: 95vw;
+          top: 56vh;
+          transform: translateZ(-190px);
+        ">
+        <p>패션</p>
+      </div>
+      <div
+        class="bubble"
+        style="
+          background-color: var(--gray);
+          left: -1vw;
+          top: 57vh;
+          transform: translateZ(-125px);
+        ">
+        <p>종교</p>
+      </div>
+      <div
+        class="bubble"
+        style="
+          background-color: var(--red);
+          left: 19vw;
+          top: 93vh;
+          transform: translateZ(-125px);
+        ">
+        <p>직장</p>
+      </div>
+      <div
+        class="bubble"
+        style="
+          background-color: var(--orange);
+          left: -15vw;
+          top: -30vh;
+          transform: translateZ(-100px);
+        ">
+        <p>동물</p>
+      </div>
+      <div
+        class="bubble"
+        style="
+          background-color: var(--green);
+          left: 16vw;
+          top: -28vh;
+          transform: translateZ(-90px);
+        ">
+        <p>자기계발</p>
+      </div>
+      <div
+        class="bubble"
+        style="
+          background-color: var(--blue);
+          left: 90vw;
+          top: -8vh;
+          transform: translateZ(-80px);
+        ">
+        <p>육아</p>
+      </div>
+      <div
+        class="bubble"
+        style="
+          background-color: var(--red);
+          left: 105vw;
+          top: 42vh;
+          transform: translateZ(-70px);
+        ">
+        <p>연애</p>
+      </div>
+      <div
+        class="bubble"
+        style="
+          background-color: var(--red);
+          left: -28vw;
+          top: 98vh;
+          transform: translateZ(-60px);
+        ">
+        <p>다이어트</p>
+      </div>
+      <div
+        class="bubble"
+        style="
+          background-color: var(--gray);
+          left: 94vw;
+          top: 89vh;
+          transform: translateZ(-54px);
+        ">
+        <p>여행</p>
+      </div>
+      <div
+        class="bubble"
+        style="
+          background-color: var(--red);
+          left: 63vw;
+          top: -12vh;
+          transform: translateZ(-16px);
+        ">
+        <p>투자</p>
+      </div>
+      <div
+        class="bubble"
+        style="
+          background-color: var(--blue);
+          left: -2vw;
+          top: 38vh;
+          transform: translateZ(-10px);
+        ">
+        <p>감정</p>
+      </div>
+      <div
+        class="bubble"
+        style="
+          background-color: var(--red);
+          left: 0vw;
+          top: -11vh;
+          transform: translateZ(0);
+        ">
+        <p>가정</p>
+      </div>
+      <div
+        class="bubble"
+        style="
+          background-color: var(--orange);
+          left: 20vw;
+          top: 68vh;
+          transform: translateZ(0);
+        ">
+        <p>게임</p>
+      </div>
+      <div
+        class="bubble"
+        style="
+          background-color: var(--green);
+          left: 80vw;
+          top: -25vh;
+          transform: translateZ(0);
+        ">
+        <p>교육</p>
+      </div>
+      <div
+        class="bubble"
+        style="
+          background-color: var(--main);
+          left: 60vw;
+          top: 61vh;
+          transform: translateZ(7px);
+        ">
+        <p>결혼</p>
+      </div>
+    </div>
+
+    <script>
+      let bubbleZ = [
+        -220, -190, -125, -125, -100, -90, -80, -70, -60, -54, -16, -10, 0, 0, 0, 7,
+      ];
+      window.addEventListener("scroll", () => {
+        document.querySelectorAll(".bubble").forEach((bubble, i) => {
+          bubbleZ[i] += 5;
+          bubble.style.transform = `translateZ(${bubbleZ[i]}px)`;
+        });
+      });
+    </script>
+  </body>
+</html>
